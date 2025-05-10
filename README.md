@@ -1,68 +1,39 @@
 # Notion iOS Reverse Engineering
 
-This project documents the structure, UI patterns, user flows, and implementation complexity of the **Notion iOS mobile app**, as part of a design system recovery and AI-first development blueprint.
+This project is a reverse-engineering analysis of the Notion mobile app (iOS version). It was done as part of a design system recovery and documentation task for my team project .
 
-## 📌 Project Goal
-Analyze and reverse-engineer the Notion iOS app to produce documentation that could enable an AI developer to replicate its features. This includes screens, flows, component architecture, effort estimates, and prompt engineering examples.
 
----
+## About the Project
 
-## 🧱 Tech Stack Recommendation
-| Layer        | Technology             |
-|--------------|------------------------|
-| Frontend     | Flutter *(preferred)* or React Native |
-| Backend      | Firebase (Firestore, Auth, Storage) or Supabase |
-| Storage      | Firebase Storage / Supabase Buckets |
-| Realtime     | Firestore listeners / Supabase Realtime |
-| State Mgmt   | Riverpod (Flutter) or Redux (React Native) |
+The goal was to study a real app similar to the one I’m planning to build, and break it down into its features, UI structure, and logic. I picked Notion because of its flexible layout system, nested pages, and block-based content — all things that relate closely to what I want to make.
+(58301)
 
----
+## Technologies I Would Use to Rebuild It
 
-## 📁 Repository Structure
-```
-notion-ios-reverse/
-├── README.md                         # Project overview and tech stack
-├── docs/
-│   └── report.pdf                    # Full written report (analysis + visuals)
-├── diagrams/
-│   └── navigation-map.svg           # Screen flow exported from PlantUML
-├── prompts/
-│   └── ai-prompts.md                # Copilot/Cursor prompts for features
-├── screenshots/
-│   └── [captured-ios-screens].png   # iOS app screenshots (UI reference)
-```
+| Layer        | Tech Stack                            |
+|--------------|----------------------------------------|
+| Frontend     | Flutter (or React Native if needed)    |
+| Backend      | Firebase (Firestore, Auth, Storage)    |
+| Realtime     | Firestore Realtime updates             |
+| State Mgmt   | Riverpod (or Redux Toolkit in RN)      |
+| Storage      | Firebase Storage for uploads           |
 
----
+These choices are based on speed, cross-platform support, and tools I already know.
 
-## 📄 Included Deliverables
-| Item                                 | Format     | Location           |
-|--------------------------------------|------------|--------------------|
-| App concept & feature breakdown      | PDF        | `docs/report.pdf`  |
-| Architecture map (flow diagram)      | SVG/PNG    | `diagrams/`        |
-| Screen effort estimation table       | PDF        | `docs/report.pdf`  |
-| AI prompts for UI & logic            | Markdown   | `prompts/ai-prompts.md` |
-| Screenshots of UI                    | PNG        | `screenshots/`     |
-| Tech stack and dev notes             | Markdown   | `README.md`        |
+## What’s Inside
 
----
+This repo includes all parts of the assignment:
 
-## 🤖 Example AI Prompt (From `ai-prompts.md`)
-```markdown
-**Feature:** Page Editor (Text Blocks)
-**Tech:** Flutter + Firebase
+- `docs/report.pdf` – full written report (structure, screens, effort estimates, prompts)
+- `diagrams/navigation-map.svg` – flow diagram of the app
+- `prompts/ai-prompts.md` – AI prompts for Copilot or Cursor
+- `screenshots/` – screen references from the Notion app
+- `README.md` – this file
 
-"Build a Flutter UI for editing a list of text blocks. Each block is a TextField. When the user hits 'Enter', create a new block. Add a toolbar above the keyboard to style text (bold, italics, to-do). Save blocks to Firestore in page_id order."
-```
+## How This Helps
 
----
+Doing this helped me learn how to break apps into systems, plan out MVPs, and write better prompts for AI tools. It also made me more aware of what’s realistic to build in a short time and where complexity can sneak in.
 
-## 🧠 Intended Use
-This repo is intended for:
-- Product/UX documentation of mobile systems
-- AI-based prototyping (e.g., GitHub Copilot)
-- Learning how to structure real-world apps like systems
+## License
 
----
-
-## 🧾 License & Attribution
-This project is part of an academic/diploma submission and is not affiliated with or endorsed by Notion Labs Inc.
+This is a study project, not affiliated with Notion Labs. All screenshots are used for educational purposes.
